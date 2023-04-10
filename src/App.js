@@ -11,19 +11,19 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(calculateTotals())
-  }, [cartItems]);
+    dispatch(calculateTotals());
+  }, [cartItems, dispatch]);
 
   useEffect(() => {
-    dispatch(getCartItems())
-  }, []);
+    dispatch(getCartItems());
+  }, [dispatch]);
 
   if (isLoading) {
     return (
       <div className="loading">
         <h1>Loading...</h1>
       </div>
-    )
+    );
   }
 
   return (
@@ -34,4 +34,5 @@ function App() {
     </main>
   );
 }
+
 export default App;
